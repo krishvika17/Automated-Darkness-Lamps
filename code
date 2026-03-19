@@ -1,25 +1,33 @@
-const int LEDPin = 13;
+const int LEDPin = 9;   // PWM pin 
 const int LDRPin = A0;
-void setup()
 
-Serial.begin(9600);
-pinMode(LEDPin, OUTPUT);
-pinMode(LDRPin, INPUT);
+void setup() {
+  Serial.begin(9600);
+  pinMode(LEDPin, OUTPUT);
+  pinMode(LDRPin, INPUT);
+}
 
-void loop()
+void loop() {
 
-int LDRStatus = analogRead(LDRPin);
-if (LDRStatus < 20)
+  int LDRStatus = analogRead(LDRPin);
 
-digitalWrite(LEDPin, HIGH);
-Serial.print("Current Light Intensity Value is :");
-Serial.println(LDRStatus);
+  Serial.print("Light Intensity: ");
+  Serial.println(LDRStatus);
 
-else
-{
+  if (LDRStatus < 300) {
+    analogWrite(LEDPin, 255);   // Very dark → full brightness
+    Serial.println("Very Dark → LED Full Bright");
+  }
 
-digitalWrite(LEDPin, LOW);
-Serial.print("Current Light Intensity Value is :");
-Serial.println(LDRStatus);
+  else if (LDRStatus < 700) {
+    analogWrite(LEDPin, 120);   // Medium light → medium brightness
+    Serial.println("Medium Light → LED Medium Bright");
+  }
 
+  else {
+    analogWrite(LEDPin, 0);     // Bright → LED OFF
+    Serial.println("Bright → LED OFF");
+  }
+
+  delay(500);
 }
