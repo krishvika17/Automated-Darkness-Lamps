@@ -14,9 +14,9 @@ The system uses an LDR and fixed resistor voltage divider to sense ambient light
 
 ## **RESOURCES:**
 
-[Project Report](PH102_PROJECT.pdf)
-[Circuit Diagram](Tinkercad_Model_LDR.jpeg)
-[Demo Video](PH102_project.mp4)
+- [Project Report](PH102_PROJECT.pdf)
+- [Circuit Diagram](Tinkercad_Model_LDR.jpeg)
+- [Demo Video](PH102_project.mp4)
 
 
 ## **KEY LEARNING OUTCOMES:**
